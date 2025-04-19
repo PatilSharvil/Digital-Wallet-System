@@ -1,17 +1,24 @@
 # Digital Wallet System
 
-A Java Swing-based digital wallet application with user and admin interfaces, built with MySQL database.
+A modern Java Swing-based digital wallet application with user and admin interfaces, built with MySQL database. Features a beautiful and intuitive user interface with modern design elements.
 
 ## Features
 
-- User registration and login
+- User registration and login with role-based access
 - Secure password hashing
 - Add money to wallet
 - Transfer funds between users
 - View transaction history
 - Admin panel for user management
-- Basic fraud detection (coming soon)
-- Bill payment system (coming soon)
+- Advanced fraud detection system
+- Bill payment system with multiple service providers
+- Modern UI with shadow effects and curved panels
+- Responsive design with proper spacing and typography
+- Real-time balance updates
+- Transaction status tracking
+- User blocking/unblocking functionality
+- Detailed transaction logs
+- Fraud detection logs and analysis
 
 ## Prerequisites
 
@@ -60,19 +67,39 @@ mvn exec:java -Dexec.mainClass="com.digitalwallet.gui.LoginFrame"
 ```
 src/main/java/com/digitalwallet/
 ├── dao/
+│   ├── FraudLogDAO.java
+│   ├── ServiceDAO.java
 │   ├── TransactionDAO.java
 │   └── UserDAO.java
 ├── gui/
 │   ├── AdminDashboard.java
 │   ├── LoginFrame.java
+│   ├── PayBillsDialog.java
 │   ├── RegisterFrame.java
 │   └── UserDashboard.java
 ├── model/
+│   ├── FraudLog.java
+│   ├── Service.java
 │   ├── Transaction.java
 │   └── User.java
+├── service/
+│   └── FraudDetectionService.java
 └── util/
     └── DatabaseUtil.java
 ```
+
+## UI Features
+
+- Modern color scheme with white coffee background (#E6E0D4)
+- Curved panels with enhanced shadow effects
+- Responsive buttons with hover and click animations
+- Clean typography using Segoe UI font
+- Consistent spacing and alignment
+- Intuitive navigation
+- Clear visual hierarchy
+- Proper error handling and user feedback
+- Modal dialogs for important actions
+- Styled form inputs and tables
 
 ## Security Features
 
@@ -80,6 +107,10 @@ src/main/java/com/digitalwallet/
 - SQL injection prevention using prepared statements
 - Input validation for all user inputs
 - Role-based access control
+- Secure transaction verification
+- Fraud detection system
+- User blocking mechanism
+- Transaction logging
 
 ## Contributing
 
