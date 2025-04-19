@@ -5,7 +5,7 @@ A modern Java Swing-based digital wallet application with user and admin interfa
 ## Features
 
 - User registration and login with role-based access
-- Secure password hashing
+- Secure password hashing using SHA-256
 - Add money to wallet
 - Transfer funds between users
 - View transaction history
@@ -22,7 +22,7 @@ A modern Java Swing-based digital wallet application with user and admin interfa
 
 ## Prerequisites
 
-- Java JDK 11 or higher
+- Java JDK 17 or higher
 - MySQL Server 8.0 or higher
 - Maven 3.6 or higher
 
@@ -37,14 +37,16 @@ cd digital-wallet-system
 2. Create the MySQL database and tables:
    - Open MySQL command line or MySQL Workbench
    - Run the SQL script in `src/main/resources/database.sql`
+   - This will create the database and all required tables
+   - It will also create a default admin user and sample services
 
 3. Configure database connection:
-   - Open `src/main/resources/database.properties`
-   - Update the following properties with your MySQL credentials:
-     ```
-     db.url=jdbc:mysql://localhost:3306/digital_wallet_db
-     db.username=your_username
-     db.password=your_password
+   - Open `src/main/java/com/digitalwallet/util/DatabaseUtil.java`
+   - Update the following constants with your MySQL credentials:
+     ```java
+     private static final String URL = "jdbc:mysql://localhost:3306/digital_wallet_db";
+     private static final String USERNAME = "root";
+     private static final String PASSWORD = "your_password";
      ```
 
 4. Build the project:
@@ -59,6 +61,7 @@ mvn exec:java -Dexec.mainClass="com.digitalwallet.gui.LoginFrame"
 
 ## Default Admin Account
 
+- Username: admin
 - Email: admin@digitalwallet.com
 - Password: admin123
 
@@ -67,26 +70,35 @@ mvn exec:java -Dexec.mainClass="com.digitalwallet.gui.LoginFrame"
 ```
 src/main/java/com/digitalwallet/
 ├── dao/
-│   ├── FraudLogDAO.java
-│   ├── ServiceDAO.java
-│   ├── TransactionDAO.java
-│   └── UserDAO.java
+│   ├── FraudLogDAO.java      # Data access for fraud logs
+│   ├── ServiceDAO.java       # Data access for services
+│   ├── TransactionDAO.java   # Data access for transactions
+│   └── UserDAO.java          # Data access for users
 ├── gui/
-│   ├── AdminDashboard.java
-│   ├── LoginFrame.java
-│   ├── PayBillsDialog.java
-│   ├── RegisterFrame.java
-│   └── UserDashboard.java
+│   ├── AdminDashboard.java   # Admin interface
+│   ├── LoginFrame.java       # Login screen
+│   ├── PayBillsDialog.java   # Bill payment dialog
+│   ├── RegisterFrame.java    # Registration screen
+│   └── UserDashboard.java    # User interface
 ├── model/
-│   ├── FraudLog.java
-│   ├── Service.java
-│   ├── Transaction.java
-│   └── User.java
+│   ├── FraudLog.java         # Fraud log entity
+│   ├── Service.java          # Service entity
+│   ├── Transaction.java      # Transaction entity
+│   └── User.java             # User entity
 ├── service/
-│   └── FraudDetectionService.java
+│   └── FraudDetectionService.java  # Fraud detection logic
 └── util/
-    └── DatabaseUtil.java
+    └── DatabaseUtil.java     # Database connection utility
 ```
+
+## Database Schema
+
+The application uses the following tables:
+- `users`: Stores user information and balances
+- `transactions`: Records all financial transactions
+- `services`: Stores available service providers
+- `payments`: Tracks bill payments
+- `fraud_logs`: Records suspicious activities
 
 ## UI Features
 
@@ -111,6 +123,12 @@ src/main/java/com/digitalwallet/
 - Fraud detection system
 - User blocking mechanism
 - Transaction logging
+
+## Dependencies
+
+- MySQL Connector/J 8.0.27
+- JFreeChart 1.5.3 (for analytics)
+- Apache Commons Lang 3.12.0
 
 ## Contributing
 
