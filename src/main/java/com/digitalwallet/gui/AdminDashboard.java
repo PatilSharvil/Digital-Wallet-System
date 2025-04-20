@@ -129,8 +129,8 @@ public class AdminDashboard extends JFrame {
         navigationPanel.setBackground(backgroundColor);
         navigationPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 15, 0));
 
-        // Create tab buttons
-        usersTabButton = createTabButton("Users", true);
+        // Create tab buttons - start with Users tab not active
+        usersTabButton = createTabButton("Users", false);
         transactionsTabButton = createTabButton("Transactions", false);
         fraudTabButton = createTabButton("Fraud Detection", false);
 
@@ -160,8 +160,9 @@ public class AdminDashboard extends JFrame {
 
         setContentPane(mainPanel);
 
-        // Show initial panel
+        // Show initial panel and set Users tab as active
         cardLayout.show(contentPanel, "USERS");
+        switchTab("USERS");
     }
 
     private JButton createTabButton(String text, boolean isActive) {
@@ -237,7 +238,7 @@ public class AdminDashboard extends JFrame {
         };
 
         button.setPreferredSize(new Dimension(150, 45));  // Slightly taller
-        button.setFont(isActive ? boldFont : regularFont);
+        button.setFont(regularFont);  // Always start with regular font
         button.setForeground(isActive ? Color.WHITE : textColor);
         button.setContentAreaFilled(false);
         button.setBorderPainted(false);

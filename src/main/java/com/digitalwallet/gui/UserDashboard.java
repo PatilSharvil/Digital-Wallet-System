@@ -17,6 +17,7 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -45,6 +46,8 @@ public class UserDashboard extends JFrame {
     private JLabel balanceLabel;
     private JTable transactionTable;
     private DefaultTableModel tableModel;
+    private ImageIcon backgroundGif;
+    private JLabel backgroundLabel;
 
     // Modern UI Colors and Fonts
     private Color primaryColor = new Color(79, 70, 229); // Indigo-600
@@ -238,10 +241,10 @@ public class UserDashboard extends JFrame {
                 g2d.setColor(backgroundColor);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
                 
-                // Enhanced shadow effect
-                int shadowSize = 12;  // Previous value
+                // Enhanced shadow effect with more layers and stronger opacity
+                int shadowSize = 18;  // Increased from 15
                 for (int i = 0; i < shadowSize; i++) {
-                    float opacity = 0.20f - (i * 0.015f);  // Previous values
+                    float opacity = 0.32f - (i * 0.013f);  // Increased initial opacity and reduced fade rate
                     g2d.setColor(new Color(0, 0, 0, Math.max((int)(opacity * 255), 0)));
                     int offset = i * 2;
                     g2d.fill(new RoundRectangle2D.Float(
@@ -268,10 +271,10 @@ public class UserDashboard extends JFrame {
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 
-                // Enhanced button shadow
-                int shadowSize = 4;
+                // Enhanced button shadow with more layers and stronger opacity
+                int shadowSize = 8;  // Increased from 6
                 for (int i = 0; i < shadowSize; i++) {
-                    float opacity = 0.2f - (i * 0.05f);
+                    float opacity = 0.35f - (i * 0.035f);  // Increased initial opacity and adjusted fade rate
                     g2d.setColor(new Color(0, 0, 0, Math.max((int)(opacity * 255), 0)));
                     int offset = i;
                     g2d.fillRoundRect(
@@ -811,7 +814,7 @@ public class UserDashboard extends JFrame {
         button.setContentAreaFilled(false);
         button.setBorderPainted(false);
         button.setFocusPainted(false);
-        button.setAlignmentX(Component.LEFT_ALIGNMENT);
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
         button.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
