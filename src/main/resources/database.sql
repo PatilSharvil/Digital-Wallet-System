@@ -1,7 +1,7 @@
 -- Create the database
 CREATE DATABASE IF NOT EXISTS digital_wallet_db;
 USE digital_wallet_db;
-
+drop database digital_wallet_db;
 -- Users table
 CREATE TABLE IF NOT EXISTS users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -16,24 +16,43 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 -- Transactions table
-CREATE TABLE IF NOT EXISTS transactions (
-    txn_id INT PRIMARY KEY AUTO_INCREMENT,
-    sender_id INT,
-    receiver_id INT,
+-- Create the transactions table with the correct structure
+CREATE TABLE transactions (
+    transaction_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
-    type ENUM('TRANSFER', 'DEPOSIT', 'WITHDRAWAL', 'SERVICE_PAYMENT') NOT NULL,
-    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (sender_id) REFERENCES users(user_id),
-    FOREIGN KEY (receiver_id) REFERENCES users(user_id)
+    type VARCHAR(50) NOT NULL,
+    description VARCHAR(255),
+    status VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 -- Services table
+-- Create services table if it doesn't exist
+
 CREATE TABLE IF NOT EXISTS services (
     service_id INT PRIMARY KEY AUTO_INCREMENT,
     service_name VARCHAR(100) NOT NULL,
     service_provider VARCHAR(100) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    description TEXT,
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_service (service_name, service_provider)
 );
+
+-- Insert some sample services
+INSERT INTO services (service_name, service_provider, description) VALUES
+('Electricity', 'State Power Corp', 'Electricity bill payment'),
+('Electricity', 'City Power Ltd', 'Electricity bill payment'),
+('Water', 'Municipal Water Board', 'Water bill payment'),
+('Gas', 'City Gas Corp', 'Gas bill payment'),
+('Internet', 'Broadband Corp', 'Internet bill payment'),
+('Internet', 'FiberNet Ltd', 'Internet bill payment'),
+('Mobile', 'TelecomOne', 'Mobile bill payment'),
+('Mobile', 'CellularPlus', 'Mobile bill payment'),
+('DTH TV', 'SatelliteTV Plus', 'DTH TV bill payment'),
+('DTH TV', 'DigitalView', 'DTH TV bill payment');
 
 -- Payments table
 CREATE TABLE IF NOT EXISTS payments (
@@ -59,10 +78,3 @@ CREATE TABLE IF NOT EXISTS fraud_logs (
 -- Insert default admin user (password: admin123)
 INSERT INTO users (username, name, email, password, role) 
 VALUES ('admin', 'Admin', 'admin@digitalwallet.com', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'ADMIN');
-
--- Insert sample services
-INSERT INTO services (service_name, service_provider) VALUES
-('Electricity Bill', 'Power Company'),
-('Mobile Recharge', 'Telecom Provider'),
-('Internet Bill', 'ISP Provider'),
-('Water Bill', 'Water Board'); 
