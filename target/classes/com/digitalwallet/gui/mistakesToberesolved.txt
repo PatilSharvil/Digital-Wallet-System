@@ -1,0 +1,15 @@
+the delete buttons should be able to delete the user in admin dashboard
+
+in admin dashboard we should be able to fraud activities like high payment and all the other things 
+
+while transaction in user dashboard we should ask for the password as well as while adding the money also 
+
+while adding the money we should be able to have the permission of the admin so that we can relate to the real life 
+
+we have to add the remaining features like the paybills and all the other 
+
+also if disha and mufij says that they want the email sending functionality then we can do that also with the help of the open source lib's 
+
+can enhance the ui according to there suggestions 
+
+
