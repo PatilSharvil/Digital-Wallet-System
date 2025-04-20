@@ -20,6 +20,56 @@ A modern Java Swing-based digital wallet application with user and admin interfa
 - Detailed transaction logs
 - Fraud detection logs and analysis
 
+## 📸 GUI Screenshots
+
+### User Interface
+<div align='center'>
+<h3>Login Page</h3>
+<img src="src/main/java/com/digitalwallet/images/login%20page.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Create Account Page</h3>
+<img src="src/main/java/com/digitalwallet/images/create%20account%20page.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>User Dashboard</h3>
+<img src="src/main/java/com/digitalwallet/images/user%20dashboard.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Add Money to Wallet</h3>
+<img src="src/main/java/com/digitalwallet/images/add%20money%20to%20wallet.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Transfer Money</h3>
+<img src="src/main/java/com/digitalwallet/images/transfer%20money.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Transaction History</h3>
+<img src="src/main/java/com/digitalwallet/images/transaction%20history.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Pay Bills Page</h3>
+<img src="src/main/java/com/digitalwallet/images/pay%20bills%20page.png" width="500" style="border-radius: 10px;">
+</div>
+
+### Admin Interface
+<div align='center'>
+<h3>Admin Login Page</h3>
+<img src="src/main/java/com/digitalwallet/images/admin%20login%20page.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Admin Dashboard</h3>
+<img src="src/main/java/com/digitalwallet/images/admin%20dashboard.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Fraud Detection Tab</h3>
+<img src="src/main/java/com/digitalwallet/images/fraud%20detection%20tab.png" width="500" style="border-radius: 10px;">
+<br><br>
+
+<h3>Types of Services</h3>
+<img src="src/main/java/com/digitalwallet/images/types%20of%20services.png" width="500" style="border-radius: 10px;">
+</div>
+
 ## Prerequisites
 
 - Java JDK 17 or higher
@@ -80,6 +130,17 @@ src/main/java/com/digitalwallet/
 │   ├── PayBillsDialog.java   # Bill payment dialog
 │   ├── RegisterFrame.java    # Registration screen
 │   └── UserDashboard.java    # User interface
+├── images/                   # GUI screenshots
+│   ├── admin dashboard.png
+│   ├── admin login page.png
+│   ├── create account page.png
+│   ├── fraud detection tab.png
+│   ├── login page.png
+│   ├── pay bills page.png
+│   ├── transaction history.png
+│   ├── transfer money.png
+│   ├── types of services.png
+│   └── user dashboard.png
 ├── model/
 │   ├── FraudLog.java         # Fraud log entity
 │   ├── Service.java          # Service entity
