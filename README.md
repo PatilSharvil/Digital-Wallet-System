@@ -24,50 +24,50 @@ A modern Java Swing-based digital wallet application with user and admin interfa
 
 ### User Interface
 <div align='center'>
-<h3>Login Page</h3>
-<img src="src/main/java/com/digitalwallet/images/login%20page.png" width="500" style="border-radius: 10px;">
+<h3>1. Login Page</h3>
+<img src="src/main/java/com/digitalwallet/images/1%20login%20page.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Create Account Page</h3>
-<img src="src/main/java/com/digitalwallet/images/create%20account%20page.png" width="500" style="border-radius: 10px;">
+<h3>2. Create Account Page</h3>
+<img src="src/main/java/com/digitalwallet/images/2%20create%20account%20page.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>User Dashboard</h3>
-<img src="src/main/java/com/digitalwallet/images/user%20dashboard.png" width="500" style="border-radius: 10px;">
+<h3>3. User Dashboard</h3>
+<img src="src/main/java/com/digitalwallet/images/3%20user%20dashboard.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Add Money to Wallet</h3>
-<img src="src/main/java/com/digitalwallet/images/add%20money%20to%20wallet.png" width="500" style="border-radius: 10px;">
+<h3>4. Add Money to Wallet</h3>
+<img src="src/main/java/com/digitalwallet/images/4%20add%20money%20to%20wallet.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Transfer Money</h3>
-<img src="src/main/java/com/digitalwallet/images/transfer%20money.png" width="500" style="border-radius: 10px;">
+<h3>5. Transfer Money</h3>
+<img src="src/main/java/com/digitalwallet/images/5%20transfer%20money.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Transaction History</h3>
-<img src="src/main/java/com/digitalwallet/images/transaction%20history.png" width="500" style="border-radius: 10px;">
+<h3>6. Pay Bills Page</h3>
+<img src="src/main/java/com/digitalwallet/images/6%20pay%20bills%20page.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Pay Bills Page</h3>
-<img src="src/main/java/com/digitalwallet/images/pay%20bills%20page.png" width="500" style="border-radius: 10px;">
+<h3>7. Types of Services</h3>
+<img src="src/main/java/com/digitalwallet/images/7%20types%20of%20services.png" width="400" style="border-radius: 10px;">
 </div>
 
 ### Admin Interface
 <div align='center'>
-<h3>Admin Login Page</h3>
-<img src="src/main/java/com/digitalwallet/images/admin%20login%20page.png" width="500" style="border-radius: 10px;">
+<h3>8. Admin Login Page</h3>
+<img src="src/main/java/com/digitalwallet/images/8%20admin%20login%20page.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Admin Dashboard</h3>
-<img src="src/main/java/com/digitalwallet/images/admin%20dashboard.png" width="500" style="border-radius: 10px;">
+<h3>9. Admin Dashboard and User Tab</h3>
+<img src="src/main/java/com/digitalwallet/images/9%20admin%20dashboard%20and%20user%20tab.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Fraud Detection Tab</h3>
-<img src="src/main/java/com/digitalwallet/images/fraud%20detection%20tab.png" width="500" style="border-radius: 10px;">
+<h3>10. Fraud Detection Tab</h3>
+<img src="src/main/java/com/digitalwallet/images/10%20fraud%20detection%20tab.png" width="400" style="border-radius: 10px;">
 <br><br>
 
-<h3>Types of Services</h3>
-<img src="src/main/java/com/digitalwallet/images/types%20of%20services.png" width="500" style="border-radius: 10px;">
+<h3>11. Transaction History in Admin</h3>
+<img src="src/main/java/com/digitalwallet/images/11%20transaction%20history%20in%20admin.png" width="400" style="border-radius: 10px;">
 </div>
 
 ## Prerequisites
